@@ -1,0 +1,73 @@
+.about-header {
+    text-align: center;
+    color: #ed9614;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.about-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.about-button:hover {
+    background-color: #2980b9;
+}
+
+/* Add style to nav links */
+.navbar-nav .nav-link {
+    color: hsl(210, 55%, 17%) !important; /* Light text */
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: #0d6efd; /* Bootstrap primary color */
+    color: #3d442c !important;
+    text-decoration: none;
+}
+
+.bg-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    display: flex;
+    align-items: end;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.bg-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.bg-aspnet {
+    background-image: url("/images/aspnet.jpeg");
+}
+
+.bg-tips {
+    background-image: url('/images/tips.jpg');
+}
+
+.bg-projects {
+    background-image: url('/images/projects.jpg');
+}
+
+.card-body {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
