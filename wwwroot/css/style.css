@@ -38,40 +38,42 @@
     text-decoration: none;
 }
 
-.bg-card {
+/* Style for the image background cards */
+.bg-image-card {
+    height: 250px;
+    background-image: url('/images/aspnet.jpeg'); /* ✅ Single image for all cards */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 250px;
+    border-radius: 12px;
     display: flex;
     align-items: end;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bg-card:hover {
+/* Hover effect */
+.bg-image-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.bg-aspnet {
-    background-image: url("/images/aspnet.jpeg");
-}
-
-.bg-tips {
-    background-image: url('/images/tips.jpg');
-}
-
-.bg-projects {
-    background-image: url('/images/projects.jpg');
-}
-
-.card-body {
+.overlay {
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    width: 100%;
+    padding: 16px;
+    border-radius: 0 0 12px 12px;
+    color: white;
 }
 
+.overlay .btn {
+    background-color: #ff6600;
+    border: none;
+}
+
+.overlay .btn:hover {
+    background-color: #e65c00;
+}
 .custom-navbar {
     background-color: #4e4c4b; /* bright orange */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
