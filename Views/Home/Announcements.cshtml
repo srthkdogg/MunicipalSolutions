@@ -1,13 +1,20 @@
-@model List<(string Title, string Message)>
+@model List<MyWebApp.Models.Announcement>
 
-<h2>Announcements</h2>
+<h2>📰 Announcements</h2>
 
-@foreach (var item in Model)
+@if (Model.Count == 0)
 {
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">@item.Title</h5>
-            <p class="card-text">@item.Message</p>
+    <p>No announcements yet.</p>
+}
+else
+{
+    @foreach (var announcement in Model)
+    {
+        <div class="card my-3">
+            <div class="card-body">
+                <h5 class="card-title">@announcement.Title</h5>
+                <p class="card-text">@announcement.Message</p>
+            </div>
         </div>
-    </div>
+    }
 }
