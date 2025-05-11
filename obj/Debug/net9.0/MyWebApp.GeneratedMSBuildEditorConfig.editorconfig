@@ -24,6 +24,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sarthakneupane/MyWebApp/Views/Home/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZG1pbkxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sarthakneupane/MyWebApp/Views/Home/Announcements.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Bbm5vdW5jZW1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
