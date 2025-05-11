@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MyWebApp.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace MyWebApp.Controllers
 {
@@ -61,41 +62,34 @@ namespace MyWebApp.Controllers
 
         // Admin login page (POST)
         [HttpPost]
-        public IActionResult AdminLogin(string username, string password)
+    public IActionResult AdminLogin(string username, string password)
+    {
+        if (username == "Sarthak" && password == "sarthak123")
         {
-            // Check if the credentials match the admin login
-            if (username == "Sarthak" && password == "sarthak123")
-            {
-                // Use TempData to store admin login status
-                TempData["IsAdmin"] = true;
-                return RedirectToAction("AddAnnouncement");
-            }
-
-            ViewBag.Error = "Invalid credentials.";
-            return View();
+            HttpContext.Session.SetString("IsAdmin", "true");
+            return RedirectToAction("AddAnnouncement");
         }
 
-        // Page to add an announcement (GET)
-        public IActionResult AddAnnouncement()
-        {
-            // Check if the user is admin
-            if (TempData["IsAdmin"] == null)
-                return RedirectToAction("AdminLogin");
+        ViewBag.Error = "Invalid credentials.";
+        return View();
+    }
 
-            return View();
-        }
+    public IActionResult AddAnnouncement()
+    {
+        if (HttpContext.Session.GetString("IsAdmin") != "true")
+            return RedirectToAction("AdminLogin");
 
-        // Handle form submission to add an announcement (POST)
-        [HttpPost]
-        public IActionResult AddAnnouncement(string title, string message)
-        {
-            // Check if the user is admin before allowing announcement posting
-            if (TempData["IsAdmin"] == null)
-                return RedirectToAction("AdminLogin");
+        return View();
+    }
 
-            // Add the new announcement to the list
-            _announcements.Add((title, message));
-            return RedirectToAction("Announcements");
-        }
+    [HttpPost]
+    public IActionResult AddAnnouncement(string title, string message)
+    {
+        if (HttpContext.Session.GetString("IsAdmin") != "true")
+            return RedirectToAction("AdminLogin");
+
+        _announcements.Add((title, message));
+        return RedirectToAction("Announcements");
+    }
     }
 }

@@ -1,9 +1,6 @@
 @model List<(string Title, string Message)>
-@{
-    ViewData["Title"] = "Announcements";
-}
 
-<h2>📢 Municipal Announcements</h2>
+<h2>Announcements</h2>
 
 @foreach (var item in Model)
 {
@@ -14,5 +11,3 @@
         </div>
     </div>
 }
-
-<a href="/Home/AdminLogin" class="btn btn-outline-primary mt-3">Login to Post</a>
