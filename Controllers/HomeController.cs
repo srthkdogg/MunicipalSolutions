@@ -67,5 +67,23 @@ public class HomeController : Controller
         ViewBag.Error = "Invalid credentials.";
         return View();
     }
+    /* announcements haru add garna lai form banako(eslai pani main bracket bahira ki vitra recheck garne)*/
+    public IActionResult AddAnnouncement()
+    {
+        if (TempData["IsAdmin"] == null)
+            return RedirectToAction("AdminLogin");
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult AddAnnouncement(string title, string message)
+    {
+        if (TempData["IsAdmin"] == null)
+            return RedirectToAction("AdminLogin");
+
+        _announcements.Add((title, message));
+        return RedirectToAction("Announcements");
+    }
 
 }
