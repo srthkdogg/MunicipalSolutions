@@ -8,7 +8,7 @@ namespace MyWebApp.Controllers
     public class HomeController : Controller
     {
         // Temporary storage for announcements
-        private static List<(string Title, string Message)> _announcements = new();
+        private static List<Announcement> _announcements = new();
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -62,34 +62,34 @@ namespace MyWebApp.Controllers
 
         // Admin login page (POST)
         [HttpPost]
-    public IActionResult AdminLogin(string username, string password)
-    {
-        if (username == "Sarthak" && password == "sarthak123")
+        public IActionResult AdminLogin(string username, string password)
         {
-            HttpContext.Session.SetString("IsAdmin", "true");
-            return RedirectToAction("AddAnnouncement");
+            if (username == "Sarthak" && password == "sarthak123")
+            {
+                HttpContext.Session.SetString("IsAdmin", "true");
+                return RedirectToAction("AddAnnouncement");
+            }
+
+            ViewBag.Error = "Invalid credentials.";
+            return View();
         }
 
-        ViewBag.Error = "Invalid credentials.";
-        return View();
-    }
+        public IActionResult AddAnnouncement()
+        {
+            if (HttpContext.Session.GetString("IsAdmin") != "true")
+                return RedirectToAction("AdminLogin");
 
-    public IActionResult AddAnnouncement()
-    {
-        if (HttpContext.Session.GetString("IsAdmin") != "true")
-            return RedirectToAction("AdminLogin");
+            return View();
+        }
 
-        return View();
-    }
+        [HttpPost]
+        public IActionResult AddAnnouncement(string title, string message)
+        {
+            if (HttpContext.Session.GetString("IsAdmin") != "true")
+                return RedirectToAction("AdminLogin");
 
-    [HttpPost]
-    public IActionResult AddAnnouncement(string title, string message)
-    {
-        if (HttpContext.Session.GetString("IsAdmin") != "true")
-            return RedirectToAction("AdminLogin");
-
-        _announcements.Add((title, message));
-        return RedirectToAction("Announcements");
-    }
+            _announcements.Add(new Announcement { Title = title, Message = message });
+            return RedirectToAction("Announcements");
+        }
     }
 }
