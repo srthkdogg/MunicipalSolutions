@@ -1,4 +1,7 @@
 @model List<MyWebApp.Models.Announcement>
+@{
+    bool isAdmin = ViewBag.IsAdmin ?? false;
+}
 
 <h2>📰 Announcements</h2>
 
@@ -14,6 +17,14 @@ else
             <div class="card-body">
                 <h5 class="card-title">@announcement.Title</h5>
                 <p class="card-text">@announcement.Message</p>
+
+                @if (isAdmin)
+                {
+                    <form asp-action="DeleteAnnouncement" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@announcement.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                }
             </div>
         </div>
     }
