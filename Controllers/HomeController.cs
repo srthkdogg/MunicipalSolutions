@@ -8,8 +8,8 @@ namespace MyWebApp.Controllers
     public class HomeController : Controller
     {
         // Temporary storage for announcements
+        private static int _announcementIdCounter = 1;
         private static List<Announcement> _announcements = new();
-        private static int _nextId = 1;
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -39,7 +39,7 @@ namespace MyWebApp.Controllers
         }
 
         public IActionResult Announcements()
-        {
+        {    // announcements for viewers and admin
             ViewBag.IsAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
             return View(_announcements);
         }
@@ -91,7 +91,7 @@ namespace MyWebApp.Controllers
 
             _announcements.Add(new Announcement
             {
-                Id = _nextId++,
+                Id = _announcementIdCounter++,
                 Title = title,
                 Message = message
             });
@@ -103,12 +103,14 @@ namespace MyWebApp.Controllers
         public IActionResult DeleteAnnouncement(int id)
         {
             if (HttpContext.Session.GetString("IsAdmin") != "true")
-                return RedirectToAction("AdminLogin");
-
-            var toDelete = _announcements.FirstOrDefault(a => a.Id == id);
-            if (toDelete != null)
             {
-                _announcements.Remove(toDelete);
+                return Unauthorized(); // Only admins can delete
+            }
+
+            var item = _announcements.FirstOrDefault(a => a.Id == id);
+            if (item != null)
+            {
+                _announcements.Remove(item);
             }
 
             return RedirectToAction("Announcements");
