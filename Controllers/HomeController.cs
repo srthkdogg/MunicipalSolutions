@@ -74,6 +74,11 @@ namespace MyWebApp.Controllers
             ViewBag.Error = "Invalid credentials.";
             return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("IsAdmin"); // Remove admin session
+            return RedirectToAction("Index");      // Redirect to home page or wherever you want
+        }
 
         public IActionResult AddAnnouncement()
         {
