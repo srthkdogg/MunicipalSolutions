@@ -11,6 +11,7 @@ namespace MyWebApp.Controllers
         private static int _announcementIdCounter = 1;
         private static List<Announcement> _announcements = new();
         private readonly ILogger<HomeController> _logger;
+        private static List<DiscussionPost> _discussions = new();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -44,9 +45,10 @@ namespace MyWebApp.Controllers
             return View(_announcements);
         }
 
+        [HttpGet]
         public IActionResult Discussions()
         {
-            return View();
+            return View(_discussions.OrderByDescending(d => d.PostedAt).ToList());
         }
 
         public IActionResult Services()
@@ -119,6 +121,48 @@ namespace MyWebApp.Controllers
             }
 
             return RedirectToAction("Announcements");
+        }
+        [HttpGet]
+        public IActionResult AddDiscussion() //for discussion
+        {
+        // Make sure only logged-in users can access the form
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Username")))
+                return RedirectToAction("Login", "Account"); // Redirect to login page
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddDiscussion(DiscussionPostViewModel model)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Username")))
+                return RedirectToAction("Login", "Account");
+
+            string imagePath = null;
+
+    // Handle image upload
+            if (model.Image != null)
+            {
+                var fileName = Path.GetFileName(model.Image.FileName);
+                var filePath = Path.Combine("wwwroot/uploads", fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.Image.CopyToAsync(stream);
+                }
+
+                imagePath = "/uploads/" + fileName;
+            }
+
+            _discussions.Add(new DiscussionPost
+            {
+                Title = model.Title,
+                Message = model.Message,
+                ImagePath = imagePath,
+                UserName = HttpContext.Session.GetString("Username"),
+                PostedAt = DateTime.Now
+            });
+
+            return RedirectToAction("Discussions");
         }
     }
 }

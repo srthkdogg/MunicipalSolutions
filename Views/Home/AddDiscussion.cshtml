@@ -1,0 +1,26 @@
+@model MyWebApp.Models.DiscussionPostViewModel
+
+@{
+    ViewData["Title"] = "Post an Issue";
+}
+
+ <h2 class="text-center my-4">Post a New Issue</h2>
+
+ <form asp-action="AddDiscussion" method="post" enctype="multipart/form-data" class="mx-auto" style="max-width: 600px;">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label">Message</label>
+        <textarea asp-for="Message" class="form-control" rows="5" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Upload Image (optional)</label>
+        <input asp-for="Image" type="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+ </form>

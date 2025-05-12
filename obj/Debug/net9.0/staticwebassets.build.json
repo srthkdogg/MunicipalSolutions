@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gXGI3rxfHIYhaPT6fRS939b2rZg0bBFewxEvsn/cYmY=",
+  "Hash": "PFJsAH5SQ/I5/3zyMAqVmEvDVveIZMXgH3z1BCwHjLg=",
   "Source": "MyWebApp",
   "BasePath": "_content/MyWebApp",
   "Mode": "Default",
@@ -2808,6 +2808,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/sarthakneupane/MyWebApp/wwwroot/uploads",
+      "SourceId": "MyWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/sarthakneupane/MyWebApp/wwwroot/",
+      "BasePath": "_content/MyWebApp",
+      "RelativePath": "uploads#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads"
     }
   ],
   "Endpoints": [
@@ -21856,7 +21877,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21909,7 +21930,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21946,7 +21967,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21993,7 +22014,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22054,7 +22075,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22099,7 +22120,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22154,7 +22175,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22215,7 +22236,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22260,7 +22281,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22315,7 +22336,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22368,7 +22389,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22405,7 +22426,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 10 Apr 2025 16:41:18 GMT"
+          "Value": "Mon, 12 May 2025 07:12:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22424,6 +22445,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-L6hghYDs3r3wKFdrkM+JQUaE85UNtCKHOCjm28vEYVA="
+        }
+      ]
+    },
+    {
+      "Route": "uploads",
+      "AssetFile": "/Users/sarthakneupane/MyWebApp/wwwroot/uploads",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 07:00:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads.5ipweew5fc",
+      "AssetFile": "/Users/sarthakneupane/MyWebApp/wwwroot/uploads",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 12 May 2025 07:00:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     }

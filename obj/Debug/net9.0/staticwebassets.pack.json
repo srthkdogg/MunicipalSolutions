@@ -269,6 +269,10 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
     },
     {
+      "Id": "/Users/sarthakneupane/MyWebApp/wwwroot/uploads",
+      "PackagePath": "staticwebassets"
+    },
+    {
       "Id": "obj/Debug/net9.0/staticwebassets/msbuild.MyWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
