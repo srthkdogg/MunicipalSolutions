@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #2E8B57;  /* SeaGreen */
+  --secondary-color: #f8f9fa;
+  --accent-color: #ffa500;   /* Orange */
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
 html {
   font-size: 14px;
 }

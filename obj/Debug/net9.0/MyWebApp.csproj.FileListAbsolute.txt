@@ -17,7 +17,6 @@
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/scopedcss/bundle/MyWebApp.styles.css
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/scopedcss/projectbundle/MyWebApp.bundle.scp.css
-/Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/fc4x9g7hx4-b9sayid5wm.gz
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/9kcuxf8biu-61n19gt1b8.gz
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/lxqromdiip-xtxxf3hu2r.gz
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/7i9eb05270-bqjiyaj88i.gz
@@ -96,4 +95,5 @@
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/MyWebApp.genruntimeconfig.cache
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/ref/MyWebApp.dll
 /Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/MyWebApp.sourcelink.json
-/Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/2g2s919iio-o3iirmvbe6.gz
+/Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/fc4x9g7hx4-r0qbopau4r.gz
+/Users/sarthakneupane/MyWebApp/obj/Debug/net9.0/compressed/2g2s919iio-f854n0m040.gz

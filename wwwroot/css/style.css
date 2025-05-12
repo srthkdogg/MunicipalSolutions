@@ -1,17 +1,20 @@
+/* === Typography & Layout === */
 .about-header {
     text-align: center;
-    color: #ed9614;
+    color: var(--accent-color);
     font-family: 'Arial', sans-serif;
+    margin-top: 20px;
 }
 
 .about-text {
     font-size: 1.1rem;
-    color: #34495e;
+    color: var(--text-color);
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .about-button {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -20,39 +23,58 @@
 }
 
 .about-button:hover {
-    background-color: #2980b9;
+    background-color: #246e45;
 }
 
-/* Add style to nav links */
-.navbar-nav .nav-link {
-    color: hsl(210, 55%, 17%) !important; /* Light text */
-    border-radius: 6px;
+
+/* === Navbar === */
+.custom-navbar {
+    background-color: var(--navbar-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1030;
+}
+
+.custom-navbar .navbar-brand {
+    color: var(--light-text) !important;
     padding: 8px 12px;
-    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-/* Hover effect */
-.navbar-nav .nav-link:hover {
-    background-color: #0d6efd; /* Bootstrap primary color */
-    color: #3d442c !important;
+.custom-navbar .navbar-brand:hover {
+    background-color: #444;
+    color: var(--accent-color) !important;
+}
+
+.custom-navbar .nav-link {
+    color: var(--light-text) !important;
+    margin: 0 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 8px 12px;
+}
+
+.custom-navbar .nav-link:hover {
+    background-color: var(--accent-color) !important;
+    color: black !important;
     text-decoration: none;
 }
 
-/* Style for the image background cards */
+
+/* === Cards with Background Image === */
 .bg-image-card {
     height: 250px;
-    background-image: url('/images/aspnet.jpeg'); /* ✅ Single image for all cards */
+    background-image: url('/images/aspnet.jpeg');
     background-size: cover;
     background-position: center;
     border-radius: 12px;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
 }
 
-/* Hover effect */
 .bg-image-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -67,43 +89,20 @@
 }
 
 .overlay .btn {
-    background-color: #ff6600;
+    background-color: var(--accent-color);
     border: none;
 }
 
 .overlay .btn:hover {
     background-color: #e65c00;
 }
-.custom-navbar {
-    background-color: #4e4c4b; /* bright orange */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1030;
-}
 
-/* Nav link base styles */
-.custom-navbar .nav-link {
-    color: white !important;
-    margin: 0 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding: 8px 12px;
-}
 
-/* Hover effect */
-.custom-navbar .nav-link:hover {
-    background-color: #ffa64d !important;
-    color: black !important;
-    text-decoration: none;
+/* === Footer (optional addition) === */
+.footer {
+    background-color: var(--navbar-bg);
+    color: var(--light-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
-
-/* Make navbar brand white */
-.custom-navbar .navbar-brand {
-    color: white !important;
-    padding: 8px 12px;
-}
-/*hover*/
-.custom-navbar .navbar-brand:hover {
-    background-color: #918f8f !important;
-    color: black !important;
-    text-decoration: none;
-} 
