@@ -38,6 +38,16 @@
                 <li class="nav-item"></li>
                     <a class="nav-link text-dark" asp-controller="Home" asp-action="AdminLogin">Admin Login</a>
                 </li>
+                
+                @if (!Context.User.Identity.IsAuthenticated) // Check if user is NOT authenticated
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Identity/Account/Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/Identity/Account/Register">Register</a>
+                    </li>
+                }
                 @if (Context.Session.GetString("IsAdmin") == "true")
                 {
                     <li class="nav-item">
