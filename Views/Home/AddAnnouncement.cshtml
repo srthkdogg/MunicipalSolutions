@@ -4,14 +4,14 @@
 
 <h2>📢 Post New Announcement</h2>
 
-<form method="post">
+<form asp-action="AddAnnouncement" method="post">
     <div class="mb-3">
-        <label>Title</label>
-        <input name="title" class="form-control" required />
+        <label for="title" class="form-label">Title</label>
+        <input id="title" name="title" class="form-control" required />
     </div>
     <div class="mb-3">
-        <label>Message</label>
-        <textarea name="message" class="form-control" required></textarea>
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
     </div>
     <button type="submit" class="btn btn-success">Post Announcement</button>
 </form>

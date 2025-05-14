@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MyWebApp.Models;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
 
 namespace MyWebApp.Controllers
@@ -20,7 +21,13 @@ namespace MyWebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+        // Get the latest 5 announcements ordered by Id descending
+            var latestAnnouncements = _announcements
+                .OrderByDescending(a => a.Id)
+                .Take(5)
+                .ToList();
+
+            return View(latestAnnouncements);
         }
 
         public IActionResult About()

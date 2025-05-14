@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<MyWebApp.Models.Announcement>
+@{
     ViewData["Title"] = "Home";
 }
 <h1 class="mb-4"></h1>
@@ -30,6 +31,24 @@
         </div>
     </div>
 </div>
+<h2 class="mt-5 mb-3">🆕 Latest Announcements</h2>
+
+@if (Model != null && Model.Any())
+{
+    <div class="list-group mb-5">
+        @foreach (var announcement in Model)
+        {
+            <div class="list-group-item">
+                <h5 class="mb-1">@announcement.Title</h5>
+                <p class="mb-1">@announcement.Message</p>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No announcements available.</p>
+}
 <div style="
     background-image: url('/images/Singha-Durbar_20200727162109.jpg');
     background-size: cover;
